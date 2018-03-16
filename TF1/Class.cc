@@ -1,6 +1,5 @@
 #include <iostream>
-//#include <cstring>
-#include<string>
+#include <string>
 
 
 #include "Student.h"
@@ -32,17 +31,21 @@ int Classe::NumStudents() const{
   return index;
 
 }
-int Classe::AddStudent(Student * student){ // Pointer fuck up
+int Classe::AddStudent(Student * student){
   if (index >= max_amount_of_students){
     return -1;
   }
   else {
     students_enrolled[index] = *student;
+    //cout << "Student " << &students_enrolled[index] <<endl;
     index = index + 1;
     return index;
   }
 
 }
-Student Classe::GetStudent(int student_index){
-  return students_enrolled[student_index];
+void Classe::GetStudent(int student_index){
+  //cout << "Student " << *students_enrolled[student_index] <<endl;
+  cout << "Name of student: " << students_enrolled[student_index].Name() << endl;
+  cout << "Date of birth: " << students_enrolled[student_index].Birthday() << endl;
+  //return &students_enrolled[student_index];
 }

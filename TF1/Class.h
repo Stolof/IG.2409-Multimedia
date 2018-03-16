@@ -23,7 +23,7 @@ public:
   int MaxNumberOfStudents() const;
   int NumStudents() const;
   int AddStudent(Student * student);
-  Student GetStudent(int student_index);
+  void GetStudent(int student_index);
 
 };
 #endif

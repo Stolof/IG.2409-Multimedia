@@ -1,3 +1,7 @@
+/*
+ Main file to display every function made
+*/
+
 #include <iostream>
 
 #include "Student.h"
@@ -7,35 +11,37 @@
 using namespace std;
 
 int main() {
-  // the Arrow(->) is for accessing some thing beyond a pointer
-  char studname[5];
+  char studname[4];
 
-  studname[0] = 'o';
+  studname[0] = 'O';
   studname[1] = 'l';
   studname[2] = 'o';
-  studname[3] = 'F';
+  studname[3] = 'f';
 
-  //Student std(studname, 19940529);
   Student* newstudent = new Student(studname, 19940529);
 
+  cout << "The name of the student: " << newstudent->Name() <<endl;
+  cout << "The date of birth: " << newstudent->Birthday() << endl;
 
-  //newstudent = &std;
-  cout << "The name of the student is: " << newstudent->Name() <<endl;
-  cout << "The date of birst is " << newstudent->Birthday() << endl;
-  //Student *stdpntr;
-  //*stdpntr = st1;
+  Classe* newclass = new Classe("multimedia", 50);
 
-  //Classe cl1("multimedia", 50);
-  //cl1.textbfName();
-  //cl1.MaxNumberOfStudents();
-  //cl1.NumStudents();
-  //cl1.AddStudent(stdpntr);
-  //cl1.GetStudent(0);
+  cout << "Name of class: " << newclass->textbfName() << endl;
+  cout << "Max number of students: " << newclass->MaxNumberOfStudents() <<endl;
+  cout << "Number of enrolled students: " << newclass->NumStudents() <<endl;
+  newclass->AddStudent(newstudent);
+  cout << "Added student: " << newclass->NumStudents() <<endl;
+  newclass->GetStudent(0);
 
-  //PrintClass(cl1);
-  //PrintStudent(st1);
-  //EnterStudent();
-  //EnterClass();
+  Student std1(studname, 19950529);
+  Classe class1("XML", 20);
+
+  //PrintClass(std1);
+  //PrintStudent(class1);
+  //newstudent = EnterStudent();
+  //cout << "Name of class: " << newstudent->Name() << endl;
+  //newclass = EnterClass();
+  //cout << "Name of class: " << newclass->textbfName() << endl;
+
 
   return 0;
 }
