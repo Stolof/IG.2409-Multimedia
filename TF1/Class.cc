@@ -36,16 +36,13 @@ int Classe::AddStudent(Student * student){
     return -1;
   }
   else {
-    students_enrolled[index] = *student;
-    //cout << "Student " << &students_enrolled[index] <<endl;
+    students_enrolled[index] = *student; // make index point to student
     index = index + 1;
     return index;
   }
 
 }
-void Classe::GetStudent(int student_index){
-  //cout << "Student " << *students_enrolled[student_index] <<endl;
-  cout << "Name of student: " << students_enrolled[student_index].Name() << endl;
-  cout << "Date of birth: " << students_enrolled[student_index].Birthday() << endl;
-  //return &students_enrolled[student_index];
+void Classe::GetStudent(int student_index) const{ //Make list and return student
+  cout << "Name of student: " << students_enrolled[student_index].Name()
+  << " Date of birth: " << students_enrolled[student_index].Birthday() << endl;
 }

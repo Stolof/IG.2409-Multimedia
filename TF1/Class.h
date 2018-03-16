@@ -2,7 +2,7 @@
 #define __CLASS__
 
 
-#include<iostream> // is this needed?
+//#include<iostream> // is this needed?
 #include<string>
 
 #include "Student.h"
@@ -23,7 +23,7 @@ public:
   int MaxNumberOfStudents() const;
   int NumStudents() const;
   int AddStudent(Student * student);
-  void GetStudent(int student_index);
+  void GetStudent(int student_index) const;
 
 };
 #endif
