@@ -10,12 +10,12 @@ using namespace std;
 Classe::Classe(string cn, int max){
   name = cn;
   if (max > 1000){
-    cout << "The maximum number of students is 1000" << endl;
+    cout << "The maximum number of students is 1000" << endl; // maybe quit
   }
   else {
     max_amount_of_students = max;
   }
-  students_enrolled[max];
+  //students_enrolled[max_amount_of_students];
   index = 0;
 }
 
@@ -36,14 +36,12 @@ int Classe::AddStudent(Student * student){
     return -1;
   }
   else {
-    students_enrolled[index] = student; // make index point to student
+    students_enrolled[index] = student;
     index = index + 1;
     return index;
   }
 
 }
-Student * Classe::GetStudent(int student_index) const{ //Make list and return student
+Student * Classe::GetStudent(int student_index) const{
   return students_enrolled[student_index];
-  //cout << "Name of student: " << students_enrolled[student_index].Name()
-  //<< " Date of birth: " << students_enrolled[student_index].Birthday() << endl;
 }

@@ -3,7 +3,7 @@
 
 class Student{
 private:
-   const char *name[127]; // points to a array with char
+  char name[128]; // I get warning
   int date_of_birth;
 
 public:

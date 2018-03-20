@@ -7,11 +7,9 @@
 
 using namespace std;
 
-void PrintStudent(const Student &s1){ // maybe remove the s
+void PrintStudent(const Student &s1){
   Student s = s1;
-  const char* n;
-  n = s.Name();
-  cout << "The name of the student is: " << n << ", The students birthday: "
+  cout << "The name of the student is: " << s.Name() << ", The students birthday: "
    << s.Birthday() <<endl;
 }
 
@@ -21,12 +19,10 @@ void PrintClass(const Classe &c){
   c.MaxNumberOfStudents() << ", students enrolled " <<  c.NumStudents() <<endl;
 
   for(int i = 0; i < c.NumStudents(); i++){
-    cout << "student number: " << (i + 1) << endl;
+    cout << "Student number: " << (i + 1) << endl;
     Student *sp = c.GetStudent(i);
-    PrintStudent(*sp); // trouble in paradise
-
+    PrintStudent(*sp);
   }
-
 }
 
 Student * EnterStudent(){
@@ -59,7 +55,5 @@ Classe * EnterClass(){
     Student *s = EnterStudent();
     classn->AddStudent(s);
   }
-
   return classn;
-
 }
