@@ -9,7 +9,9 @@ using namespace std;
 
 void PrintStudent(const Student &s1){
   Student s = s1;
-  cout << "The name of the student is: " << s.Name() << ", The students birthday: "
+  const char *ptr;
+  ptr = s.Name();
+  cout << "The name of the student is: " << ptr << ", The students birthday: "
    << s.Birthday() <<endl;
 }
 
@@ -31,7 +33,7 @@ Student * EnterStudent(){
 
   cout << "Enter students name" << endl;
   cin >> name;
-  cout << "Enter students date of birth" << endl;
+  cout << "Enter students date of birth YYYYMMDD" << endl;
   cin >> dob;
   Student *student = new Student(name, dob);
 

@@ -10,12 +10,14 @@ using namespace std;
 Classe::Classe(string cn, int max){
   name = cn;
   if (max > 1000){
-    cout << "The maximum number of students is 1000" << endl; // maybe quit
+    int newmax;
+    cout << "The maximum number of students is 1000" << endl;
+    exit(1);
   }
   else {
     max_amount_of_students = max;
+    // students_enrolled[max_amount_of_students]; // warining
   }
-  //students_enrolled[max_amount_of_students];
   index = 0;
 }
 
