@@ -15,22 +15,19 @@ int main( int argc, char** argv )
    return -1;
  }
 
-
-cvtColor(image, gray_image, COLOR_BGR2GRAY);
-imwrite(newfileGray ,gray_image)
-
  Mat gray_image; // might need to add some things here.
  /*...
     ...
     ...
     ...*/
-
+cvtColor(image, gray_image, COLOR_BGR2GRAY);
+imwrite("newfileGray" ,gray_image);
 // winname
-namedWindow(color_image_window, WINDOW_AUTOSIZE);
-imshow(color_image_window, image);
+namedWindow("color_image_window", WINDOW_AUTOSIZE);
+imshow("color_image_window", image);
 
-namedWindow(gray_image_window, WINDOW_AUTOSIZE);
-imshow(gray_image_window, gray_image);
+namedWindow("gray_image_window", WINDOW_AUTOSIZE);
+imshow("gray_image_window", gray_image);
 waitKey(0);
 
  return 0;
