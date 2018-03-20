@@ -17,15 +17,16 @@ int main() {
   cout << "Name of class: " << newclass->textbfName() << endl;
   cout << "Max number of students: " << newclass->MaxNumberOfStudents() <<endl;
   cout << "Number of enrolled students: " << newclass->NumStudents() <<endl;
+  std::cout << "Get student: " << newclass->GetStudent(0) << endl;
 
   Student * newstudent = EnterStudent();
 
   cout << "The name of the student: " << newstudent->Name() <<endl;
-  cout << "The date of birth: " << newstudent->Birthday() << endl;
+  cout << "The students birthday: " << newstudent->Birthday() << endl;
 
-  //Classe cls1("XML", 20);
-  //cls1.AddStudent(newstudent);
-  //PrintClass(cls1);
+  Classe cls1("XML", 20);
+  cls1.AddStudent(newstudent);
+  PrintClass(cls1);
 
   char studname[4];
   studname[0] = 'O';

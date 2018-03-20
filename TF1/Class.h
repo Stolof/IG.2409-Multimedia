@@ -17,13 +17,13 @@ private:
 
 public:
   int index;
-  Student students_enrolled[];
+  Student * students_enrolled[1000];
   Classe(string cn, int max);
   string textbfName() const;
   int MaxNumberOfStudents() const;
   int NumStudents() const;
   int AddStudent(Student * student);
-  void GetStudent(int student_index) const;
+  Student * GetStudent(int student_index) const;
 
 };
 #endif
