@@ -8,7 +8,7 @@ int main(){
 
   // Create a VideoCapture object and open the input file
   // If the input is the web camera, pass 0 instead of the video file name VideoCapture cap(0);
-  VideoCapture ...;
+  VideoCapture cap(0);
 
   // Check if camera opened successfully
   if(!cap.isOpened()){
@@ -23,10 +23,13 @@ int main(){
     cap >> frame;
 
     // If the frame is empty, break immediately
-      ...
+    if(frame.empty()){
+      break;
+    }
 
     // Display the resulting frame
-    ...
+    imshow("video", frame);
+    waitKey(1);               // milisec delay
 
     // Press  ESC on keyboard to exit
     char c=(char)waitKey(25);
